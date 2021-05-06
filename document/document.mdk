@@ -1,0 +1,73 @@
+Title         : Welcome
+Author        : You
+Logo          : True
+
+
+[TITLE]
+
+# Madoko 
+
+Madoko is a fast markdown processor for writing professional articles
+with a focus on simplicity and plain text readability.
+
+* Read the [reference manual].
+* Explore the upper-right toolbox menu to discover how Markdown works. 
+* `Alt-Q` reformats the current paragraph.
+
+Enjoy!
+
+## scss 语法
+### for 循环
+
+ ```
+ @for $i from 1 through 20 {
+    @if($i >= 8){
+      .f#${i}{
+        font-size: $i * 1px
+      }
+    }
+     .mr#{$i}{
+        margin-right: ($i * 1px);
+    }
+    .ml#{$i}{
+        margin-left: ($i * 1px);
+    }
+    .mt#{$i}{
+        margin-bottom: ($i * 1px)
+    }
+    .mt#{$i}{
+        margin-top: ($i * 1px);
+    }
+    .pt#{$i}{
+        padding-top: ($i * 1px);
+    }
+    .pl#{$i}{
+        padding-left: ($i * 1px);
+    }
+    .pr#{$i}{
+        padding-right: ($i * 1px);
+    }
+    .pb#{$i}{
+        padding-bottom: ($i * 1px);
+    }
+   }
+  
+```
+
+### mixin 混淆用法
+
+```
+  @mixin flex($direction: column,$inline:flex){
+    display: $inline;
+    flex-direction: $direction;
+    flex-wrap:nowrap
+  }
+  
+  // 水平垂直居中
+@mixin center ($direction:column){
+    @include flex($direction);
+    justify-content: center;
+    align-items: center;
+}
+  ```
+[reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko reference manual"
