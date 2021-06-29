@@ -154,3 +154,28 @@ import SvgIcon from '@/components/SvgIcon.vue'
 const app = createApp(App)
 app.component('svg-icon', SvgIcon)
      ```
+
+
+6. 下载第三方 使用方法
+```
+
+export function MP(ak) {
+  return new Promise((resolve, reject) => {
+    // 如果已加载直接返回
+    if (typeof BMapGL !== 'undefined') {
+      resolve(BMapGL)
+      return true
+    }
+    // 百度地图异步加载回调处理
+    window.BMapGLInit = function() {
+      // console.log("百度地图脚本初始化成功...");
+      resolve(BMapGL)
+    }
+
+    // 插入script脚本
+    const script = document.createElement('script')
+    script.src = `//api.map.baidu.com/api?type=webgl&v=1.0&ak=843V9geCxA8cszfBfThYozGe0Q1epIsd&callback=BMapGLInit`
+    document.body.appendChild(script)
+  })
+}
+```
